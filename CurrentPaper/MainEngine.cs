@@ -7,6 +7,8 @@ namespace CurrentPaper
 {
     public static class MainEngine
     {
+        #region Public Methods
+
         public static string[] GetCurrentWallpapers()
         {
             try
@@ -37,6 +39,10 @@ namespace CurrentPaper
                 throw;
             }
         }
+
+        #endregion
+
+        #region Private Methods
 
         private static void AddTranscodedImageCache(RegistryKey key, string valueName, List<string> list)
         {
@@ -99,5 +105,7 @@ namespace CurrentPaper
 
             list.Add(value);
         }
+
+        #endregion
     }
 }
