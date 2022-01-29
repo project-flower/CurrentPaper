@@ -6,10 +6,16 @@ namespace CurrentPaper
 {
     public partial class FormMain : Form
     {
+        #region Public Methods
+
         public FormMain()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Private Methods
 
         private void GetTranscodedImageCache()
         {
@@ -64,6 +70,10 @@ namespace CurrentPaper
         {
             return MessageBox.Show(this, text, Text, buttons, icon);
         }
+
+        #endregion
+
+        // Designer's Methods
 
         private void buttonExplore_Click(object sender, EventArgs e)
         {
