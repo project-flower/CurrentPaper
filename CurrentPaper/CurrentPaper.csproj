@@ -89,4 +89,9 @@
     <Content Include="CurrentPaper.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>IF "$(ConfigurationName)"=="Release" (
+    COPY /Y "$(SolutionDir)README.txt" $(TargetDir)
+)</PostBuildEvent>
+  </PropertyGroup>
 </Project>
