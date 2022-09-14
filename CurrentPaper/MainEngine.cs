@@ -7,6 +7,12 @@ namespace CurrentPaper
 {
     public static class MainEngine
     {
+        #region Public Fields
+
+        public const int Offset = 24;
+
+        #endregion
+
         #region Public Methods
 
         public static string[] GetCurrentWallpapers()
@@ -57,11 +63,18 @@ namespace CurrentPaper
                 throw;
             }
 
+            int length = bytes.Length;
+
+            if (length <= Offset)
+            {
+                return;
+            }
+
             string text;
 
             try
             {
-                text = Encoding.Unicode.GetString(bytes);
+                text = Encoding.Unicode.GetString(bytes, Offset, (length - Offset));
             }
             catch
             {
