@@ -63,6 +63,8 @@ namespace CurrentPaper
                 throw;
             }
 
+            if (bytes == null) return;
+
             int length = bytes.Length;
 
             if (length <= Offset)
